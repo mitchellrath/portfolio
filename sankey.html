@@ -1,0 +1,140 @@
+<html>
+<body>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<div id="sankey_multiple" style="width: 900px; height: 300px;"></div>
+
+<script type="text/javascript">
+  google.charts.load("current", {packages:["sankey"]});
+  google.charts.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    
+    data.addRows([
+		['hospital admission: Acute Care/Floor','Elective Surgery',150],
+		['hospital admission: Acute Care/Floor','Non-elective Surgery',1760],
+		['hospital admission: Chest Pain Center','Elective Surgery',3],
+		['hospital admission: Chest Pain Center','Non-elective Surgery',131],
+		['hospital admission: Direct Admit','Elective Surgery',418],
+		['hospital admission: Direct Admit','Non-elective Surgery',6023],
+		['hospital admission: Emergency Department','Elective Surgery',719],
+		['hospital admission: Emergency Department','Non-elective Surgery',36243],
+		['hospital admission: Floor','Elective Surgery',605],
+		['hospital admission: Floor','Non-elective Surgery',7450],
+		['hospital admission: ICU','Elective Surgery',4],
+		['hospital admission: ICU','Non-elective Surgery',31],
+		['hospital admission: ICU to SDU','Elective Surgery',27],
+		['hospital admission: ICU to SDU','Non-elective Surgery',18],
+		['hospital admission: Observation','Elective Surgery',3],
+		['hospital admission: Observation','Non-elective Surgery',7],
+		['hospital admission: Operating Room','Elective Surgery',8343],
+		['hospital admission: Operating Room','Non-elective Surgery',1444],
+		['hospital admission: Other','Non-elective Surgery',7],
+		['hospital admission: Other Hospital','Elective Surgery',51],
+		['hospital admission: Other Hospital','Non-elective Surgery',1590],
+		['hospital admission: Other ICU','Elective Surgery',17],
+		['hospital admission: Other ICU','Non-elective Surgery',216],
+		['hospital admission: PACU','Elective Surgery',868],
+		['hospital admission: PACU','Non-elective Surgery',149],
+		['hospital admission: Recovery Room','Elective Surgery',2327],
+		['hospital admission: Recovery Room','Non-elective Surgery',569],
+		['hospital admission: Step-Down Unit (SDU)','Elective Surgery',54],
+		['hospital admission: Step-Down Unit (SDU)','Non-elective Surgery',1077],
+		['Elective Surgery','icu admission: Accident & Emergency',405],
+		['Elective Surgery','icu admission: Floor',482],
+		['Elective Surgery','icu admission: Operating Room / Recovery',15918],
+		['Elective Surgery','icu admission: Other ICU/Hospital',38],
+		['Non-elective Surgery','icu admission: Accident & Emergency',53655],
+		['Non-elective Surgery','icu admission: Floor',15129],
+		['Non-elective Surgery','icu admission: Operating Room / Recovery',2795],
+		['Non-elective Surgery','icu admission: Other ICU/Hospital',3179],
+		['icu admission: Accident & Emergency','Cardiovascular',14996],
+		['icu admission: Accident & Emergency','Gastrointestinal',4289],
+		['icu admission: Accident & Emergency','Genitourinary',1175],
+		['icu admission: Accident & Emergency','Gynecological',3],
+		['icu admission: Accident & Emergency','Hematological',457],
+		['icu admission: Accident & Emergency','Metabolic',6598],
+		['icu admission: Accident & Emergency','Musculoskeletal/Skin',264],
+		['icu admission: Accident & Emergency','Neurological',7667],
+		['icu admission: Accident & Emergency','Respiratory',6683],
+		['icu admission: Accident & Emergency','Sepsis',8582],
+		['icu admission: Accident & Emergency','Trauma',2868],
+		['icu admission: Floor','Cardiovascular',5090],
+		['icu admission: Floor','Gastrointestinal',1277],
+		['icu admission: Floor','Genitourinary',417],
+		['icu admission: Floor','Gynecological',22],
+		['icu admission: Floor','Hematological',148],
+		['icu admission: Floor','Metabolic',798],
+		['icu admission: Floor','Musculoskeletal/Skin',101],
+		['icu admission: Floor','Neurological',1502],
+		['icu admission: Floor','Respiratory',3092],
+		['icu admission: Floor','Sepsis',2735],
+		['icu admission: Floor','Trauma',178],
+		['icu admission: Operating Room / Recovery','Cardiovascular',8955],
+		['icu admission: Operating Room / Recovery','Gastrointestinal',3200],
+		['icu admission: Operating Room / Recovery','Genitourinary',520],
+		['icu admission: Operating Room / Recovery','Gynecological',287],
+		['icu admission: Operating Room / Recovery','Hematological',14],
+		['icu admission: Operating Room / Recovery','Metabolic',112],
+		['icu admission: Operating Room / Recovery','Musculoskeletal/Skin',778],
+		['icu admission: Operating Room / Recovery','Neurological',2001],
+		['icu admission: Operating Room / Recovery','Respiratory',1432],
+		['icu admission: Operating Room / Recovery','Sepsis',43],
+		['icu admission: Operating Room / Recovery','Trauma',740],
+		['icu admission: Other ICU/Hospital','Cardiovascular',918],
+		['icu admission: Other ICU/Hospital','Gastrointestinal',250],
+		['icu admission: Other ICU/Hospital','Genitourinary',56],
+		['icu admission: Other ICU/Hospital','Gynecological',1],
+		['icu admission: Other ICU/Hospital','Hematological',19],
+		['icu admission: Other ICU/Hospital','Metabolic',133],
+		['icu admission: Other ICU/Hospital','Musculoskeletal/Skin',23],
+		['icu admission: Other ICU/Hospital','Neurological',719],
+		['icu admission: Other ICU/Hospital','Respiratory',391],
+		['icu admission: Other ICU/Hospital','Sepsis',367],
+		['icu admission: Other ICU/Hospital','Trauma',53],
+		['Cardiovascular','Death',2390],
+		['Cardiovascular','Discharged',27609],
+		['Gastrointestinal','Death',670],
+		['Gastrointestinal','Discharged',8356],
+		['Genitourinary','Death',134],
+		['Genitourinary','Discharged',2038],
+		['Gynecological','Death',2],
+		['Gynecological','Discharged',311],
+		['Hematological','Death',58],
+		['Hematological','Discharged',580],
+		['Metabolic','Death',116],
+		['Metabolic','Discharged',7534],
+		['Musculoskeletal/Skin','Death',55],
+		['Musculoskeletal/Skin','Discharged',1111],
+		['Neurological','Death',940],
+		['Neurological','Discharged',10956],
+		['Respiratory','Death',1301],
+		['Respiratory','Discharged',10308],
+		['Sepsis','Death',1854],
+		['Sepsis','Discharged',9886],
+		['Trauma','Death',259],
+		['Trauma','Discharged',3583]
+    ]);
+
+    // set chart options
+    var options = {
+		width: 1200,
+		height: 750,
+		sankey: { node: {nodePadding: 35, label: {fontSize: 12, bold: true} 
+				}
+			}
+		  };
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_multiple'));
+    chart.draw(data, options);
+   }
+</script>
+</body>
+</html>
+
+
+</html>
