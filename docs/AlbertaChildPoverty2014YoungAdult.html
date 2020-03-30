@@ -1,0 +1,117 @@
+<!--
+   AlbertaChildPoverty2014YoungAdult.html
+   
+   Copyright 2020 Mitchell Rath <mitchellrath@Mitchells-MacBook-Pro-2.local>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>My first chart using FusionCharts Suite XT</title>
+	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+	<script type="text/javascript" src="js/fusioncharts.js"></script>
+	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.candy.js"></script>
+	
+	<script type="text/javascript">
+		FusionCharts.ready(function(){
+			var chartObj = new FusionCharts({
+    type: 'radar',
+    renderAt: 'chart-container',
+    width: '1000',
+    height: '800',
+    dataFormat: 'json',
+    dataSource: {
+        "chart": {
+            "caption": "Parents Aged 18-34 Whose Children Under 16...",
+            "subCaption": "Questions are asked in relation to being suitable for the child's age <br>Excluding Questions <10% Answering 'No' ",
+            "numberSuffix": "%",
+             "theme": "candy",
+            "radarfillcolor": "#ffffff",
+            "plotFillAlpha": "10", 
+            "yAxisMaxValue": "100",
+			"yAxisMinValue": "35",
+			"showPlotBorder": "1",
+			"inheritPlotBorderColor": "1",
+			"baseFont": "Verdana",
+			"baseFontSize": "10",
+			"plotBorderThickness": "4"
+            
+        },
+        "categories": [{
+            "category": [
+                {"label": "have at least 2 pairs of shoes?"}, 
+                {"label": "eat fresh fruit or vegetables everyday?"}, 
+                {"label": "have books at home?"}, 
+                {"label": "have outdoor leisure equipment?"}, 
+                {"label": "have regular leisure activities?"}, 
+                {"label": "attend paid school events?"}, 
+                {"label": "go on holiday once per year?"}
+                ]
+        }],
+        "dataset": [{
+            "seriesname": "Did Not Complete High School",
+            
+            "data": [	{"value":  " 84.21053 "}, 
+						{"value":  " 89.47368 "}, 
+						{"value":  " 97.36842 "}, 
+						{"value":  " 89.47368 "}, 
+						{"value":  " 39.47368 "}, 
+						{"value":  " 89.47368 "}, 
+						{"value":  " 73.68421 "}
+						]
+        }, {
+            "seriesname": "Completed High School And/Or Certification",
+            "data": [	{"value":  " 95.74468 "}, 
+						{"value":  " 90.07092 "}, 
+						{"value":  " 99.29078 "}, 
+						{"value":  " 96.80851 "}, 
+						{"value":  " 78.7234 "}, 
+						{"value":  " 92.19858 "}, 
+						{"value":  " 88.65248 "}
+						]
+        }, {
+            "seriesname": "University",
+            "data": [	{"value":  " 100 "}, 
+						{"value":  " 93.25843 "}, 
+						{"value":  " 100 "}, 
+						{"value":  " 98.8764 "}, 
+						{"value":  " 87.64045 "}, 
+						{"value":  " 95.50562 "}, 
+						{"value":  " 95.50562 "}
+						]
+        }
+        ]
+    }
+}
+);
+			chartObj.render();
+		});
+	</script>
+	</head>
+	<body>
+		<div id="chart-container">FusionCharts XT will load here!</div>
+		<button onclick="window.location.href = 'https://mitchellrath.github.io/portfolio/AlbertaChildPoverty2014YoungAdult';">See Young Adult Parent's Responses</button>
+		<button onclick="window.location.href = 'https://mitchellrath.github.io/portfolio/AlbertaChildPoverty2014MiddleAge';">See Middle Aged Parent's Responses</button>
+		<button onclick="window.location.href = 'https://mitchellrath.github.io/portfolio/AlbertaChildPoverty2014Elder';">See 55+ Parent's Responses</button>
+	</body>
+</html>
+
