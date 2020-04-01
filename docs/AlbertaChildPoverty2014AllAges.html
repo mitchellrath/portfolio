@@ -1,0 +1,409 @@
+<html>
+  <head>
+    <title>Mitchell Rath's Portfolio</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: 000000;
+        font-family: Tahoma, Helvetica, Arial, sans-serif;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+      }
+
+      .chartCont {
+        padding: 0px 0px;
+      }
+
+      .border-bottom {
+        border-bottom: 0px dashed rgba(0, 117, 194, 0.2);
+      }
+
+      .border-right {
+        border-right: 0px dashed rgba(0, 117, 194, 0.2);
+      }
+
+      #container {
+        width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        background-color: 000000;
+      }
+
+      #container > div {
+        width: 100%;
+        background-color: 000000;
+      }
+
+      #logoContainer {
+        float: left;
+        width: 200px;
+		height: 100px;
+      }
+
+     
+      #logoContainer div {
+        position: absolute;
+        top: 8px;
+        left: 95px;
+      }
+
+      #logoContainer div h2 {
+        color: #0075c2;
+      }
+
+      #logoContainer div h4 {
+        color: #0e948c;
+      }
+
+      #logoContainer div p {
+        color: #719146;
+        font-size: 12px;
+        padding: 5px 0;
+      }
+
+      #userDetail {
+        float: right;
+      }
+
+      #userDetail img {
+        position: absolute;
+        right: 130px;
+        width: 200px;
+		height: 100px;
+      }
+
+      #userDetail div {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #0075c2;
+      }
+
+      #userDetail div p {
+        margin: 0;
+      }
+
+      #userDetail div p:nth-child(2) {
+        color: #0e948c;
+      }
+
+      #header div:nth-child(3) {
+        clear: both;
+        border-bottom: 0px solid #0075c2;
+      }
+
+      #content div {
+        display: inline-block;
+      }
+
+      #content > div {
+        margin: 0px 0px;
+      }
+
+      #content > div:nth-child(1) > div {
+        margin: 0px 0 0;
+      }
+
+      #content > div:nth-child(2) > div {
+        margin: 0 0 0px;
+      }
+
+      #footer p {
+        margin: 0;
+        font-size: 9pt;
+        color: black;
+        padding: 0px 0;
+        text-align: center;
+      }
+    </style>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+	<script type="text/javascript" src="js/fusioncharts.js"></script>
+	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.candy.js"></script>
+	
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+    <script type="text/javascript">
+      FusionCharts.ready(function() {
+        var salesRevChart = new FusionCharts({
+          type: 'radar',
+          renderAt: "sales-chart-container",
+          width: "1100",
+          height: "300",
+          dataFormat: "json",
+          dataSource: {
+        "chart": {
+            "caption": "Parents Aged 55+ Whose Children Under 16...",
+         //   "subCaption": "Questions are asked in relation to being suitable for the child's age <br>Excluding Questions <10% Answering 'No' ",
+            "numberSuffix": "%",
+             "theme": "candy",
+            "radarfillcolor": "#ffffff",
+            "plotFillAlpha": "10", 
+            "yAxisMaxValue": "100",
+			"yAxisMinValue": "35",
+			"showPlotBorder": "1",
+			"inheritPlotBorderColor": "1",
+			"baseFont": "Verdana",
+			"baseFontSize": "10",
+			"plotBorderThickness": "4",
+			"showLegend": "0"
+
+            
+        },
+        "categories": [{
+            "category": [
+                {"label": "👟have at least 2 pairs of shoes?👡"}, 
+                {"label": "🍉eat fresh fruit or vegetables everyday?🥬"}, 
+                {"label": "📚have books at home?📖"}, 
+                {"label": "⚽have outdoor leisure equipment?🚴"}, 
+                {"label": "🏊have regular leisure activities?🎹"}, 
+                {"label": "🎭attend paid school events?🚌"}, 
+                {"label": "🏖️go on holiday once per year?✈️"}
+                ]
+        }],
+        "dataset": [{
+            "seriesname": "Did Not Complete High School",
+            
+            "data": [	{"value":  " 100 "}, 
+						{"value":  " 85.71429 "}, 
+						{"value":  " 71.42857 "}, 
+						{"value":  " 100 "}, 
+						{"value":  " 57.14286 "}, 
+						{"value":  " 100 "}, 
+						{"value":  " 57.14286 "}
+						]
+        }, {
+            "seriesname": "Completed High School And/Or Certification",
+            "data": [	{"value":  " 95 "}, 
+						{"value":  " 83.33333 "}, 
+						{"value":  " 96.66667 "}, 
+						{"value":  " 95 "}, 
+						{"value":  " 76.66667 "}, 
+						{"value":  " 96.66667 "}, 
+						{"value":  " 83.33333 "}
+						]
+        }, {
+            "seriesname": "University",
+            "data": [	{"value":  " 100 "}, 
+						{"value":  " 85.18519 "}, 
+						{"value":  " 100 "}, 
+						{"value":  " 100 "}, 
+						{"value":  " 92.59259 "}, 
+						{"value":  " 96.2963 "}, 
+						{"value":  " 85.18519 "}
+						]
+        }
+        ]
+    }
+        }).render();
+
+        var dailyTransChart = new FusionCharts({
+          type: "radar",
+          renderAt: "trans-chart-container",
+          width: "1100",
+          height: "300",
+          dataFormat: "json",
+          dataSource: {
+        "chart": {
+            "caption": "Parents Aged 35-54 Whose Children Under 16...",
+        //    "subCaption": "Questions are asked in relation to being suitable for the child's age <br>Excluding Questions <10% Answering 'No' ",
+            "numberSuffix": "%",
+            "theme": "candy",
+            "radarfillcolor": "#ffffff",
+            "plotFillAlpha": "10", 
+            "yAxisMaxValue": "100",
+			"yAxisMinValue": "35",
+			"showPlotBorder": "1",
+			"inheritPlotBorderColor": "1",
+			"baseFont": "Verdana",
+			"baseFontSize": "10",
+			"plotBorderThickness": "4",
+			"showLegend": "0"
+            
+        },
+        "categories": [{
+            "category": [
+                {"label": "👟have at least 2 pairs of shoes?👡"}, 
+                {"label": "🍉eat fresh fruit or vegetables everyday?🥬"}, 
+                {"label": "📚have books at home?📖"}, 
+                {"label": "⚽have outdoor leisure equipment?🚴"}, 
+                {"label": "🏊have regular leisure activities?🎹"}, 
+                {"label": "🎭attend paid school events?🚌"}, 
+                {"label": "🏖️go on holiday once per year?✈️"}
+                ]
+        }],
+        "dataset": [{
+            "seriesname": "Did Not Complete High School",
+            
+            "data": [	{"value":  " 91.83673 "}, 
+						{"value":  " 75.5102 "}, 
+						{"value":  " 100 "}, 
+						{"value":  " 93.87755 "}, 
+						{"value":  " 65.30612 "}, 
+						{"value":  " 79.59184 "}, 
+						{"value":  " 79.59184 "}
+						]
+        }, {
+            "seriesname": "Completed High School And/Or Certification",
+            "data": [	{"value":  " 97.34513 "}, 
+						{"value":  " 87.02065 "}, 
+						{"value":  " 99.41003 "}, 
+						{"value":  " 96.0177 "}, 
+						{"value":  " 83.03835 "}, 
+						{"value":  " 96.60767 "}, 
+						{"value":  " 87.02065 "}
+						]
+        }, {
+            "seriesname": "University",
+            "data": [	{"value":  " 97.23618 "}, 
+						{"value":  " 94.22111 "}, 
+						{"value":  " 99.74874 "}, 
+						{"value":  " 97.98995 "}, 
+						{"value":  " 92.46231 "}, 
+						{"value":  " 96.73367 "}, 
+						{"value":  " 91.45729 "}
+						]
+        }
+        ]
+    }
+        }).render();
+
+        var dailyFootfallChart = new FusionCharts({
+          type: "radar",
+          renderAt: "footfall-chart-container",
+          width: "1100",
+          height: "300",
+          dataFormat: "json",
+          dataSource: {
+        "chart": {
+            "caption": "Parents Aged 18-34 Whose Children Under 16...",
+           // "subCaption": "Questions are asked in relation to being suitable for the child's age <br>Excluding Questions <10% Answering 'No' ",
+            "numberSuffix": "%",
+             "theme": "candy",
+            "radarfillcolor": "#ffffff",
+            "plotFillAlpha": "10", 
+            "yAxisMaxValue": "100",
+			"yAxisMinValue": "35",
+			"showPlotBorder": "1",
+			"inheritPlotBorderColor": "1",
+			"baseFont": "Verdana",
+			"baseFontSize": "10",
+			"plotBorderThickness": "4"
+            
+        },
+        "categories": [{
+            "category": [
+                {"label": "👟have at least 2 pairs of shoes?👡"}, 
+                {"label": "🍉eat fresh fruit or vegetables everyday?🥬"}, 
+                {"label": "📚have books at home?📖"}, 
+                {"label": "⚽have outdoor leisure equipment?🚴"}, 
+                {"label": "🏊have regular leisure activities?🎹"}, 
+                {"label": "🎭attend paid school events?🚌"}, 
+                {"label": "🏖️go on holiday once per year?✈️"}
+                ]
+        }],
+        "dataset": [{
+            "seriesname": "Did Not Complete High School",
+            
+            "data": [	{"value":  " 84.21053 "}, 
+						{"value":  " 89.47368 "}, 
+						{"value":  " 97.36842 "}, 
+						{"value":  " 89.47368 "}, 
+						{"value":  " 39.47368 "}, 
+						{"value":  " 89.47368 "}, 
+						{"value":  " 73.68421 "}
+						]
+        }, {
+            "seriesname": "Completed High School And/Or Certification",
+            "data": [	{"value":  " 95.74468 "}, 
+						{"value":  " 90.07092 "}, 
+						{"value":  " 99.29078 "}, 
+						{"value":  " 96.80851 "}, 
+						{"value":  " 78.7234 "}, 
+						{"value":  " 92.19858 "}, 
+						{"value":  " 88.65248 "}
+						]
+        }, {
+            "seriesname": "University",
+            "data": [	{"value":  " 100 "}, 
+						{"value":  " 93.25843 "}, 
+						{"value":  " 100 "}, 
+						{"value":  " 98.8764 "}, 
+						{"value":  " 87.64045 "}, 
+						{"value":  " 95.50562 "}, 
+						{"value":  " 95.50562 "}
+						]
+        }
+        ]
+    }
+        }).render();
+
+ 
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="header">
+        <div id="logoContainer">
+          <img
+          />
+          <div>
+            <h2>Alberta Community Health Survey 2014, Child Poverty</h2>
+
+            <h4>Questions are asked in relation to being suitable for the child's age <br>Excluding Questions <10% Answering 'No' </h4>
+          </div>
+        </div>
+        <div id="userDetail">
+          <img
+            src="https://static.officeholidays.com/images/935x475t/canada-alberta-01.jpg"
+            alt="Logo"
+          />
+          <div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+      <div class="border-bottom" id="content">
+        <div class="border-bottom">
+          <div class="chartCont border-right" id="sales-chart-container">
+            FusionCharts will load here.
+          </div>
+          <div class="chartCont" id="trans-chart-container">
+            FusionCharts will load here.
+          </div>
+        </div>
+        <div>
+          <div class="chartCont border-right" id="footfall-chart-container">
+            FusionCharts will load here.
+          </div>
+          
+        </div>
+      </div>
+      <div id="footer">
+        <button onclick="window.location.href = 'https://mitchellrath.github.io/portfolio/AlbertaChildPoverty2014YoungAdult.html';">See Young Adult Parent's Responses</button>
+		<button onclick="window.location.href = 'https://mitchellrath.github.io/portfolio/AlbertaChildPoverty2014MiddleAge';">See Middle Aged Parent's Responses</button>
+		<button onclick="window.location.href = 'https://mitchellrath.github.io/portfolio/AlbertaChildPoverty2014Elder';">See 55+ Parent's Responses</button>
+      </div>
+    </div>
+  </body>
+</html>
+
